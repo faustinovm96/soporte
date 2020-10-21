@@ -8,7 +8,7 @@
 
 		if($_SESSION["perfil"] == "Administrador"){
 
-			echo '<li class="active">
+			echo '<li>
 
 				<a href="inicio">
 
@@ -91,7 +91,7 @@
 
 					<i class="fa fa-list-ul"></i>
 					
-					<span>Facturas</span>
+					<span>Ventas</span>
 					
 					<span class="pull-right-container">
 					
@@ -105,10 +105,10 @@
 					
 					<li>
 
-						<a href="construccion">
+						<a href="crear-venta">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Cargar e Imprimir</span>
+							<span>Agregar Venta</span>
 
 						</a>
 
@@ -116,10 +116,10 @@
 
 					<li>
 
-						<a href="construccion">
+						<a href="ventas">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Lista de Facturas</span>
+							<span>Administrar Ventas</span>
 
 						</a>
 

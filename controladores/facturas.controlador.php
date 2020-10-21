@@ -1,16 +1,16 @@
 <?php
 
-class ControladorVentas{
+class ControladorFacturas{
 
 	/*=============================================
-	MOSTRAR VENTAS
+	MOSTRAR FacturaS
 	=============================================*/
 
-	static public function ctrMostrarVentas($item, $valor){
+	static public function ctrMostrarFacturas($item, $valor){
 
-		$tabla = "ventas";
+		$tabla = "facturas";
 
-		$respuesta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+		$respuesta = ModeloFacturas::mdlMostrarFacturas($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -20,103 +20,31 @@ class ControladorVentas{
 	CREAR VENTA
 	=============================================*/
 
-	static public function ctrCrearVenta(){
+	static public function ctrCrearFactura(){
 
-		if(isset($_POST["nuevaVenta"])){
-
-			/*=============================================
-			ACTUALIZAR LAS COMPRAS DEL CLIENTE Y REDUCIR EL STOCK Y AUMENTAR LAS VENTAS DE LOS PRODUCTOS
-			=============================================*/
-
-			if($_POST["listaProductos"] == ""){
-
-					echo'<script>
-
-				swal({
-					  type: "error",
-					  title: "La venta no se ha ejecuta si no hay productos",
-					  showConfirmButton: true,
-					  confirmButtonText: "Cerrar"
-					  }).then(function(result){
-								if (result.value) {
-
-								window.location = "ventas";
-
-								}
-							})
-
-				</script>';
-
-				return;
-			}
-
-
-			$listaProductos = json_decode($_POST["listaProductos"], true);
-
-			$totalProductosComprados = array();
-
-			foreach ($listaProductos as $key => $value) {
-
-			   //array_push($totalProductosComprados, $value["cantidad"]);
-				/*
-			   $tablaProductos = "productos";
-
-			    $item = "id";
-			    $valor = $value["id"];
-			    $orden = "id";
-
-			    $traerProducto = ModeloServicios::mdlMostrarServicios($tablaProductos, $item, $valor, $orden);*/
-/*
-				$item1a = "ventas";
-				$valor1a = $value["cantidad"] + $traerProducto["ventas"];
-
-			    $nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
-
-				$item1b = "stock";
-				$valor1b = $value["stock"];
-
-				$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);*/
-
-			}
-/*
-			$tablaClientes = "clientes";
-
-			$item = "id";
-			$valor = $_POST["seleccionarCliente"];
-
-			$traerCliente = ModeloClientes::mdlMostrarClientes($tablaClientes, $item);
-
-			$item1a = "compras";
-			$valor1a = array_sum($totalProductosComprados) + $traerCliente["compras"];
-
-			$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valor);
-
-			$item1b = "ultima_compra";*/
-/*
-			date_default_timezone_set('America/Bogota');
-
-			$fecha = date('Y-m-d');
-			$hora = date('H:i:s');
-			$valor1b = $fecha.' '.$hora;
-
-			$fechaCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1b, $valor1b, $valor);*/
+		if(isset($_POST["nuevaFactura"])){
 
 			/*=============================================
 			GUARDAR LA COMPRA
 			=============================================*/	
 
-			$tabla = "ventas";
+			$tablaFactura = "facturas";
 
-			$datos = array("id_vendedor"=>$_POST["idVendedor"],
-						   "id_cliente"=>$_POST["seleccionarCliente"],
-						   "codigo"=>$_POST["nuevaVenta"],
-						   "productos"=>$_POST["listaProductos"],
-						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
-						   "neto"=>$_POST["nuevoPrecioNeto"],
-						   "total"=>$_POST["totalVenta"],
-						   "metodo_pago"=>$_POST["listaMetodoPago"]);
+			$tablaDetalles = "detalles_factura";
 
-			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
+			$datosFactura = array("id_cliente"=>$_POST["id_cliente"],
+						   "num_factura"=>$_POST["num_factura"],
+						   "fecha"=>$_POST["fecha"],
+						   "condicion_venta"=>$_POST["condicion_venta"],
+						   "monto_total"=>$_POST["monto_total"]);
+
+			$detallesFactura = array("id_factura"=>$_POST["id_factura"],
+						   "id_cliente"=>$_POST["id_cliente"],
+						   "cantidad"=>$_POST["cantidad"],
+						   "precio_unitario"=>$_POST["precio_unitario"],
+						   "precio_total"=>$_POST["precio_total"]);
+
+			$respuesta = ModeloFacturas::mdlIngresarFactura($tabla, $datosFactura);
 
 			if($respuesta == "ok"){
 

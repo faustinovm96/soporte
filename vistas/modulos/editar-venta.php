@@ -106,7 +106,9 @@
                     
                     <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
 
-                    <option value="<?php echo $cliente["id"]; ?>"><?php echo $cliente["nombre"]; ?></option>
+                    <option value="<?php echo $cliente["id"]; ?>"><?php echo $cliente["nombre_razon_social"]; ?></option>
+
+                    <option value="">Seleccione una opcion</option>
 
                     <?php
 
@@ -117,7 +119,11 @@
 
                        foreach ($categorias as $key => $value) {
 
-                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                        if($value['nombre'] != $cliente["nombre_razon_social"]){
+                            echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>'; 
+                        }
+
+                         
 
                        }
 
@@ -147,27 +153,21 @@
                   $valor = $value["id"];
                   $orden = "id";
 
-                  $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  $respuesta = ControladorServicios::ctrMostrarServicios($item, $valor);
 
-                  $stockAntiguo = $respuesta["stock"] + $value["cantidad"];
+                  //$stockAntiguo = $respuesta["stock"] + $value["cantidad"];
                   
                   echo '<div class="row" style="padding:5px 15px">
             
-                        <div class="col-xs-6" style="padding-right:0px">
+                        <div class="col-xs-9" style="padding-right:0px">
             
                           <div class="input-group">
                 
                             <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
 
-                            <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" readonly required>
+                            <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["correcciones"].'" readonly required>
 
                           </div>
-
-                        </div>
-
-                        <div class="col-xs-3">
-              
-                          <input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="'.$value["cantidad"].'" stock="'.$stockAntiguo.'" nuevoStock="'.$value["stock"].'" required>
 
                         </div>
 
@@ -177,7 +177,7 @@
 
                             <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
                    
-                            <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
+                            <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["costo"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
    
                           </div>
                

@@ -1,0 +1,5 @@
+1- Cuando se inicia sesión con un perfil vacio, no aparece el menu.
+
+2- En la interfaz de pedidos, al seleccionar un cliente solamente que se muestren los equipos que pertenecen a ese cliente.
+
+3- En la interfaz de servicio, al seleccionar el pedido, se debe visualizar en un campo de texto, el problema del equipo.

@@ -41,12 +41,12 @@
         <div class="col-lg-12">
 
           <?php
-
+/*
           if($_SESSION["perfil"] =="Administrador"){
           
            include "reportes/grafico-ventas.php";
 
-          }
+          }*/
 
           ?>
 
@@ -55,12 +55,12 @@
         <div class="col-lg-6">
 
           <?php
-
+/*
           if($_SESSION["perfil"] =="Administrador"){
           
            include "reportes/productos-mas-vendidos.php";
 
-         }
+         }*/
 
           ?>
 
@@ -70,11 +70,11 @@
 
           <?php
 
-          if($_SESSION["perfil"] =="Administrador"){
+          /*if($_SESSION["perfil"] =="Administrador"){
           
            include "inicio/productos-recientes.php";
 
-         }
+         }*/
 
           ?>
 

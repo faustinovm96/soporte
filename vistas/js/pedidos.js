@@ -19,61 +19,52 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
-      
+
         var datosCliente = new FormData();
         datosCliente.append("idCliente",respuesta["id_cliente"]);
 
-           $.ajax({
+         $.ajax({
 
-              url:"ajax/clientes.ajax.php",
-              method: "POST",
-              data: datosCliente,
-              cache: false,
-              contentType: false,
-              processData: false,
-              dataType:"json",
-              success:function(respuesta){
-                  
-                  $("#editarCliente2").val(respuesta["id"]);
-                  $("#editarCliente2").html(respuesta["nombre_razon_social"]);
+            url:"ajax/clientes.ajax.php",
+            method: "POST",
+            data: datosCliente,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType:"json",
+            success:function(respuesta){
+                
+                $("#editarCliente2").val(respuesta["id"]);
+                $("#editarCliente2").html(respuesta["nombre_razon_social"]);
 
-              }
+            }
 
-          })
+        })
 
         var datosEquipo = new FormData();
         datosEquipo.append("idEquipo",respuesta["id_equipo"]);
 
-           $.ajax({
+         $.ajax({
 
-              url:"ajax/equipos.ajax.php",
-              method: "POST",
-              data: datosEquipo,
-              cache: false,
-              contentType: false,
-              processData: false,
-              dataType:"json",
-              success:function(respuesta){
+            url:"ajax/equipos.ajax.php",
+            method: "POST",
+            data: datosEquipo,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType:"json",
+            success:function(respuesta){
+                
+                $("#editarEquipo").val(respuesta["id"]);
+                $("#editarEquipo").html(respuesta["tipo"]);
 
-                resultado = respuesta["tipo"]+' '+respuesta["marca"]+' '+respuesta["modelo"];
+            }
 
-                  $("#editarEquipo").val(respuesta["id"]);
-                  $("#editarEquipo").html(resultado);
-
-              }
-
-          })  
+        })
 
       	 $("#idPedido").val(respuesta["id"]);
          $("#editarFecha").val(respuesta["fecha"]);
          $("#editarProblema").val(respuesta["problema"]);
-/*	       $("#editarTipo").val(respuesta["tipo"]);
-         $("#editarMarca").val(respuesta["marca"]);
-	       $("#editarModelo").val(respuesta["modelo"]);*/
-         //$("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);       
-	       //$("#editarTelefono").val(respuesta["telefono"]);
-/*         $("#editarSerie").val(respuesta["numero_serie"]);
-         $("#editarAccesorio").val(respuesta["accesorios"]);   */    
           
 	  }
 

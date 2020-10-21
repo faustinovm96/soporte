@@ -171,7 +171,7 @@ MODAL AGREGAR equipo
 
             <div class="form-group row">
 
-             <div class="col-xs-9">
+             <div class="col-xs-12">
               
               <div class="input-group">
               
@@ -198,15 +198,6 @@ MODAL AGREGAR equipo
                 </select>
 
               </div>
-            </div>
-
-            <div class="col-xs-3">
-              
-              <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
-          
-                Agregar Cliente
-
-              </button>
 
             </div>
 
@@ -459,139 +450,6 @@ MODAL EDITAR CATEGORÍA
         ?> 
         
       </form>   
-
-    </div>
-
-  </div>
-
-</div>
-
-<!--=====================================
-MODAL AGREGAR CLIENTE
-======================================-->
-
-<div id="modalAgregarCliente" class="modal fade" role="dialog">
-  
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-
-      <form role="form" method="post">
-
-        <!--=====================================
-        CABEZA DEL MODAL
-        ======================================-->
-
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Agregar cliente</h4>
-
-        </div>
-
-        <!--=====================================
-        CUERPO DEL MODAL
-        ======================================-->
-
-        <div class="modal-body">
-
-          <div class="box-body">
-
-            <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar Documento: Cédula o RUC" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL NOMBRE -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA LA DIRECCIÓN -->
-
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Dirección" required>
-
-              </div>
-
-            </div> 
-
-            <!-- ENTRADA PARA EL CELULAR -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoCelular" placeholder="Ingresar Celular" data-inputmask="'mask':'(9999) 999-999'" data-mask required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA el EMAIL -->
-
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar Email" required>
-
-              </div>
-
-            </div> 
-  
-          </div>
-
-        </div>
-
-        <!--=====================================
-        PIE DEL MODAL
-        ======================================-->
-
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-          <button type="submit" class="btn btn-primary">Guardar Cliente</button>
-
-        </div>
-
-      </form>
-
-      <?php
-
-        $crearCliente = new ControladorClientes();
-        $crearCliente -> ctrCrearCliente();
-
-      ?>
 
     </div>
 

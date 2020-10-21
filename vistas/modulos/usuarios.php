@@ -394,9 +394,9 @@ MODAL EDITAR USUARIO
               
                 <span class="input-group-addon"><i class="fa fa-users"></i></span> 
 
-                <select class="form-control input-lg" name="editarEstado">
+                <select class="form-control input-lg" name="editarPerfil">
                   
-                  <option value="" id="editarEstado"></option>
+                  <option value="" id="editarPerfil"></option>
 
                   <option value="Administrador">Administrador</option>
 

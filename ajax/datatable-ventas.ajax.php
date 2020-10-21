@@ -1,7 +1,16 @@
 <?php
 
-require_once "../controladores/productos.controlador.php";
-require_once "../modelos/productos.modelo.php";
+require_once "../controladores/servicios.controlador.php";
+require_once "../modelos/servicios.modelo.php";
+
+require_once "../controladores/pedidos.controlador.php";
+require_once "../modelos/pedidos.modelo.php";
+
+require_once "../controladores/equipos.controlador.php";
+require_once "../modelos/equipos.modelo.php";
+
+require_once "../controladores/clientes.controlador.php";
+require_once "../modelos/clientes.modelo.php";
 
 
 class TablaProductosVentas{
@@ -16,7 +25,7 @@ class TablaProductosVentas{
     	$valor = null;
     	$orden = "id";
 
-  		$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+  		$productos = ControladorServicios::ctrMostrarServicios($item, $valor);
  		
   		if(count($productos) == 0){
 
@@ -30,29 +39,20 @@ class TablaProductosVentas{
 
 		  for($i = 0; $i < count($productos); $i++){
 
-		  	/*=============================================
- 	 		TRAEMOS LA IMAGEN
-  			=============================================*/ 
+		  	$item1 = "id";
+    		$valor1 = $productos[$i]["id_pedido"];
 
-		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='40px'>";
+    		$pedidos = ControladorPedidos::ctrMostrarPedidos($item1, $valor1);
 
-		  	/*=============================================
- 	 		STOCK
-  			=============================================*/ 
+    		$item2 = "id";
+    		$valor2 = $pedidos["id_equipo"];
 
-  			if($productos[$i]["stock"] <= 10){
+    		$equipo = ControladorEquipos::ctrMostrarEquipos($item2, $valor2);
 
-  				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
+    		$item3 = "id";
+    		$valor3 = $equipo["id_cliente"];
 
-  			}else if($productos[$i]["stock"] > 11 && $productos[$i]["stock"] <= 15){
-
-  				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
-
-  			}else{
-
-  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
-
-  			}
+    		$cliente = ControladorClientes::ctrMostrarClientes($item3, $valor3);
 
 		  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
@@ -62,10 +62,11 @@ class TablaProductosVentas{
 
 		  	$datosJson .='[
 			      "'.($i+1).'",
-			      "'.$imagen.'",
-			      "'.$productos[$i]["codigo"].'",
-			      "'.$productos[$i]["descripcion"].'",
-			      "'.$stock.'",
+			      "'.$cliente["nombre_razon_social"].'",
+			      "'.$equipo["tipo"].' '.$equipo["marca"].' '.$equipo["modelo"].'",
+			      "'.$productos[$i]["correcciones"].'",
+			      "'.$productos[$i]["costo"].'",
+
 			      "'.$botones.'"
 			    ],';
 

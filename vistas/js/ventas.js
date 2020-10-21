@@ -64,7 +64,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
      $.ajax({
 
-     	url:"ajax/productos.ajax.php",
+     	url:"ajax/servicios.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,
@@ -73,14 +73,14 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
       	dataType:"json",
       	success:function(respuesta){
 
-      	    var descripcion = respuesta["descripcion"];
-          	var stock = respuesta["stock"];
-          	var precio = respuesta["precio_venta"];
+      	    var correcciones = respuesta["correcciones"];
+          	//var stock = respuesta["stock"];
+          	var precio = respuesta["costo"];
 
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
-
+/*
           	if(stock == 0){
 
       			swal({
@@ -93,7 +93,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 			    return;
 
-          	}
+          	}*/
 
           	$(".nuevoProducto").append(
 
@@ -101,25 +101,17 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 			  '<!-- Descripción del producto -->'+
 	          
-	          '<div class="col-xs-6" style="padding-right:0px">'+
+	          '<div class="col-xs-8" style="padding-right:0px">'+
 	          
 	            '<div class="input-group">'+
 	              
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
 
-	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+descripcion+'" readonly required>'+
+	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+correcciones+'" readonly required>'+
 
 	            '</div>'+
 
 	          '</div>'+
-
-	          '<!-- Cantidad del producto -->'+
-
-	          '<div class="col-xs-3">'+
-	            
-	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock="'+stock+'" nuevoStock="'+Number(stock-1)+'" required>'+
-
-	          '</div>' +
 
 	          '<!-- Precio del producto -->'+
 
@@ -262,7 +254,7 @@ $(".btnAgregarProducto").click(function(){
 
 	$.ajax({
 
-		url:"ajax/productos.ajax.php",
+		url:"ajax/servicios.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,
@@ -293,13 +285,6 @@ $(".btnAgregarProducto").click(function(){
 
 	          '</div>'+
 
-	          '<!-- Cantidad del producto -->'+
-
-	          '<div class="col-xs-3 ingresoCantidad">'+
-	            
-	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="0" stock nuevoStock required>'+
-
-	          '</div>' +
 
 	          '<!-- Precio del producto -->'+
 

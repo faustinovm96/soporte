@@ -114,7 +114,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                   $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 
-                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
+                  echo '<td>'.$respuestaCliente["nombre_razon_social"].'</td>';
 
                   $itemUsuario = "id";
                   $valorUsuario = $value["id_vendedor"];

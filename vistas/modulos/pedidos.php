@@ -80,17 +80,18 @@ if($_SESSION["perfil"] == "Especial"){
 
           for($i = 0; $i < count($pedidos); $i++){
             
-            $item = "id";
-            $valor = $pedidos[$i]["id_cliente"];
-            $cliente = ControladorClientes::ctrMostrarClientes($item, $valor);
+            $item3 = "id";
+            $valor3 = $pedidos[$i]["id_usuario"];
+            $usuario = ControladorUsuarios::ctrMostrarUsuarios($item3, $valor3);
 
             $item2 = "id";
             $valor2 = $pedidos[$i]["id_equipo"];
             $equipo = ControladorEquipos::ctrMostrarEquipos($item2, $valor2);
 
-            $item3 = "id";
-            $valor3 = $pedidos[$i]["id_usuario"];
-            $usuario = ControladorUsuarios::ctrMostrarUsuarios($item3, $valor3);
+            $item = "id";
+            $valor = $pedidos[$i]["id_cliente"];
+            $cliente = ControladorClientes::ctrMostrarClientes($item, $valor);
+
 
             echo '<tr>
 

@@ -78,7 +78,7 @@ class ModeloClientes{
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET documento = :documento, nombre_razon_social = :nombre_razon_social, celular = :celular, direccion = :direccion, email = :email WHERE id = :id");
 
 		$stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_STR);
-		$stmt->bindParam(":nombre_razon_social", $datos["nombre_razon_social"], PDO::PARAM_STR);
+		$stmt->bindParam(":nombre_razon_social", $datos["nombre"], PDO::PARAM_STR);
 		
 		//$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
 		$stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);

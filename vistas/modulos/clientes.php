@@ -19,9 +19,9 @@ if($_SESSION["perfil"] == "Especial"){
   <section class="content-header">
     
     <h1>
-      
-      Administrar Clientes
-    
+      <center>
+      Administrar Cliente
+    </center>
     </h1>
 
     <ol class="breadcrumb">

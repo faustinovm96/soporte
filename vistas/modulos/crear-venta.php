@@ -141,7 +141,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                        foreach ($categorias as $key => $value) {
 
-                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                         echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>';
 
                        }
 
@@ -311,10 +311,11 @@ if($_SESSION["perfil"] == "Especial"){
 
                  <tr>
                   <th style="width: 10px">#</th>
-                  <th>Imagen</th>
-                  <th>Código</th>
-                  <th>Descripcion</th>
-                  <th>Stock</th>
+                  <th>Cliente</th>
+                  <th>Equipo</th>
+                  <th>Correcciones</th>
+                  <th>Costo</th>
+
                   <th>Acciones</th>
                 </tr>
 
