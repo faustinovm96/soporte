@@ -116,6 +116,8 @@ class ControladorVentas{
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 
+			var_dump($datos);
+
 			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
@@ -126,6 +128,27 @@ class ControladorVentas{
 
 				swal({
 					  type: "success",
+					  title: "La venta ha sido guardada correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+								if (result.value) {
+
+								window.location = "ventas";
+
+								}
+							})
+
+				</script>';
+
+			}else {
+
+				echo'<script>
+
+				localStorage.removeItem("rango");
+
+				swal({
+					  type: "error",
 					  title: "La venta ha sido guardada correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"

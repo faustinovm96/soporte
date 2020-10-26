@@ -65,6 +65,17 @@
 
 			echo '<li>
 
+				<a href="servicio">
+
+					<i class="fa fa-users"></i>
+					<span>Servicios</span>
+
+				</a>
+
+			</li>';
+
+			echo '<li>
+
 				<a href="pedidos">
 
 					<i class="fa fa-users"></i>
@@ -76,10 +87,10 @@
 
 			echo '<li>
 
-				<a href="servicio">
+				<a href="taller">
 
 					<i class="fa fa-users"></i>
-					<span>Servicio Técnico</span>
+					<span>Soporte Técnico</span>
 
 				</a>
 
