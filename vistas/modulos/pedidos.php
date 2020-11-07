@@ -57,11 +57,14 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Usuario</th>
-           <th>Equipo</th> 
            <th>Cliente</th> 
-           <th>Fecha de Registro</th>
-           <th>Problema</th>          
+           <th>Equipo</th> 
+           <th>Técnico</th> 
+           <th>Fecha</th>
+           <th>Problema</th>   
+           <th>Causas</th> 
+           <th>Solución</th> 
+           <th>Estado</th>        
 
            <th>Acciones</th>
 
@@ -92,6 +95,9 @@ if($_SESSION["perfil"] == "Especial"){
             $valor = $pedidos[$i]["id_cliente"];
             $cliente = ControladorClientes::ctrMostrarClientes($item, $valor);
 
+            $item4 = "id";
+            $valor4 = $pedidos[$i]["id_tecnico"];
+            $tecnico = ControladorTecnicos::ctrMostrarTecnicos($item4, $valor4);
 
             echo '<tr>
 
@@ -99,13 +105,19 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$cliente["nombre_razon_social"].'</td>
 
-                    <td>'.$equipo["tipo"].' '.$equipo["marca"].' '.$equipo["modelo"].'</td>                    
+                    <td>'.$equipo["tipo"].' '.$equipo["marca"].' '.$equipo["modelo"].'</td>                        
 
-                    <td>'.$usuario["nombre"].'</td>
+                    <td>'.$tecnico["nombre"].'</td>
 
                     <td>'.$pedidos[$i]["fecha"].'</td>
 
                     <td>'.$pedidos[$i]["problema"].'</td>
+
+                    <td>'.$pedidos[$i]["causas"].'</td>
+
+                    <td>'.$pedidos[$i]["solucion"].'</td>
+
+                    <td>'.$pedidos[$i]["estado"].'</td>
 
                     <td>
 
@@ -174,7 +186,7 @@ MODAL AGREGAR PEDIDO
           <div class="box-body">
 
             <!-- ENTRADA PARA LA FECHA -->
-
+<!--
             <div class="form-group">
               
               <div class="input-group">
@@ -185,7 +197,7 @@ MODAL AGREGAR PEDIDO
 
               </div>
 
-            </div> 
+            </div> -->
 
             <!-- USUARIO QUE HACE EL PEDIDO -->
             
@@ -275,6 +287,42 @@ MODAL AGREGAR PEDIDO
 
             </div>
 
+             <!-- ENTRADA PARA EL equipo-->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <select class="form-control input-lg" id="nuevoTecnico" name="nuevoTecnico" required>
+                  
+                  <option value="">Selecionar Técnico</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+
+                  $tecnicos = ControladorTecnicos::ctrMostrarTecnicos($item, $valor);
+
+                  //$id_valor_cliente = "";
+
+                  foreach ($tecnicos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                    //$id_valor_cliente = $value["id"];
+
+                  }
+
+                  ?>
+  
+                </select>
+
+              </div>
+
+            </div>
+
             <!-- ENTRADA PARA el EMAIL -->
 
             <div class="form-group">
@@ -288,6 +336,58 @@ MODAL AGREGAR PEDIDO
               </div>
 
             </div> 
+
+            <!-- ENTRADA PARA el EMAIL -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevaCausa" placeholder="Ingresar Causas del Problema">
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA el EMAIL -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevaSolucion" placeholder="Ingresar Solución Propuesta">
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA SELECCIONAR el estado -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+
+                <select class="form-control input-lg" name="nuevoEstado">
+                  
+                  <option value="">Selecionar Estado</option>
+
+                  <option value="Pendiente">Pendiente</option>
+
+                  <option value="Taller">Taller</option>
+
+                  <option value="Terminado">Terminado</option>
+
+                </select>
+
+              </div>
+
+            </div>
   
           </div>
 
@@ -352,22 +452,6 @@ MODAL EDITAR CLIENTE
 
           <div class="box-body">
 
-            <!-- ENTRADA PARA LA FECHA -->
-
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
-
-                <input type="date" class="form-control input-lg" id="editarFecha" name="editarFecha" required>
-
-                <input type="hidden" id="idPedido" name="idPedido">
-
-              </div>
-
-            </div> 
-
             <!-- USUARIO QUE HACE EL PEDIDO -->
             
             <div class="form-group">
@@ -379,6 +463,8 @@ MODAL EDITAR CLIENTE
                     <input type="text" class="form-control input-lg" id="editarUser" name="editarUser" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
 
                     <input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $_SESSION["id"]; ?>">
+
+                    <input type="hidden" id="idPedido" name="idPedido">
 
                   </div>
 
@@ -392,9 +478,27 @@ MODAL EDITAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg" id="editarCliente2" name="editarCliente2" readonly readonly required>
+                <select class="form-control input-lg" name="editarCliente"  required>
                   
                   <option id="editarCliente"></option>
+                  <option value="">Seleccionar Cliente</option>
+
+                  <?php 
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                        if($value['nombre'] != $cliente["nombre_razon_social"]){  
+                            echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>';
+                        }
+
+                       }
+
+                   ?>
   
                 </select>
 
@@ -410,9 +514,25 @@ MODAL EDITAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg" id="editarEquipo" name="editarEquipo" readonly required>
+                <select class="form-control input-lg" name="editarEquipo" required>
                   
                   <option id="editarEquipo"></option>
+                  <option value="">Seleccionar Equipo</option>
+
+                  <?php 
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorEquipos::ctrMostrarEquipos($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                            echo '<option value="'.$value["id"].'">'.$value["tipo"].' '.$value["marca"].' '.$value["modelo"].'</option>';
+                        
+                       }
+
+                   ?>
   
                 </select>
 
@@ -433,6 +553,60 @@ MODAL EDITAR CLIENTE
               </div>
 
             </div> 
+
+             <!-- ENTRADA PARA el EMAIL -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editarCausa" name="editarCausa" placeholder="Ingresar Causas del Problema">
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA el EMAIL -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editarSolucion" name="editarSolucion" placeholder="Ingresar Solución Propuesta">
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA SELECCIONAR el estado -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+
+                <select class="form-control input-lg" name="editarEstado">
+                  
+                  <option id="editarEstado"></option>
+
+                  <option value="">Selecionar Estado</option>
+
+                  <option value="Pendiente">Pendiente</option>
+
+                  <option value="Taller">Taller</option>
+
+                  <option value="Terminado">Terminado</option>
+
+                </select>
+
+              </div>
+
+            </div>
 
           </div>
 

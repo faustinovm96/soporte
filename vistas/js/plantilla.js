@@ -62,7 +62,7 @@ $('[data-mask]').inputmask()
 /*=============================================
 CORRECCIÓN BOTONERAS OCULTAS BACKEND	
 =============================================*/
-
+/*
 if(window.matchMedia("(max-width:767px)").matches){
 	
 	$("body").removeClass('sidebar-collapse');
@@ -70,4 +70,4 @@ if(window.matchMedia("(max-width:767px)").matches){
 }else{
 
 	$("body").addClass('sidebar-collapse');
-}
+}*/

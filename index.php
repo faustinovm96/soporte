@@ -10,6 +10,7 @@ require_once "controladores/tecnicos.controlador.php";
 require_once "controladores/servicios.controlador.php";
 require_once "controladores/equipos.controlador.php";
 require_once "controladores/pedidos.controlador.php";
+require_once "controladores/soporte.controlador.php";
 
 
 require_once "modelos/usuarios.modelo.php";
@@ -21,6 +22,7 @@ require_once "modelos/tecnicos.modelo.php";
 require_once "modelos/servicios.modelo.php";
 require_once "modelos/equipos.modelo.php";
 require_once "modelos/pedidos.modelo.php";
+require_once "modelos/soporte.modelo.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

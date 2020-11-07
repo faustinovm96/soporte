@@ -19,7 +19,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar ventas
+      Movimientos
     
     </h1>
 
@@ -72,7 +72,7 @@ if($_SESSION["perfil"] == "Especial"){
            <th style="width:10px">#</th>
            <th>Código factura</th>
            <th>Cliente</th>
-           <th>Vendedor</th>
+           <th>Usuario</th>
            <th>Forma de pago</th>
            <th>Neto</th>
            <th>Total</th> 

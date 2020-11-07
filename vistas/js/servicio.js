@@ -55,97 +55,29 @@ TRAER DATOS AL FORMULARIO PARA EDITAR
 =============================================*/
 $(".tablas").on("click", ".btnEditarServicio", function(){
 
-  var idServicio = $(this).attr("idServicio");
+  var idProducto = $(this).attr("idProducto");
 
   var datos = new FormData();
-    datos.append("idServicio", idServicio);
+  datos.append("idProducto", idProducto);
 
-    $.ajax({
+  $.ajax({
+    url: "ajax/servicios.ajax.php",
+    method: "POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType:"json",
+    success: function(respuesta){
 
-      url:"ajax/servicios.ajax.php",
-      method: "POST",
-      data: datos,
-      cache: false,
-      contentType: false,
-      processData: false,
-      dataType:"json",
-      success:function(respuesta){
+        $("#editarDescripcion").val(respuesta["descripcion"]);
+        $("#editarCosto").val(respuesta["costo"]);
+        $("#idProducto").val(respuesta["id"]);
 
-          var datosPedido = new FormData();
-          datosPedido.append("idPedido",respuesta["id_pedido"]);
-
-           $.ajax({
-
-              url:"ajax/pedidos.ajax.php",
-              method: "POST",
-              data: datosPedido,
-              cache: false,
-              contentType: false,
-              processData: false,
-              dataType:"json",
-              success:function(respuesta){
-                  
-                  var datosEquipo = new FormData();
-                  datosEquipo.append("idEquipo",respuesta["id_equipo"]);
-
-                   $.ajax({
-
-                      url:"ajax/equipos.ajax.php",
-                      method: "POST",
-                      data: datosEquipo,
-                      cache: false,
-                      contentType: false,
-                      processData: false,
-                      dataType:"json",
-                      success:function(respuesta){
-                          
-                          $("#editarPedido").val(respuesta["id"]);
-                          $("#editarPedido").html(respuesta["tipo"]+' '+respuesta["marca"]+' '+respuesta["modelo"]);
-
-                      }
-
-              })
-
-              }
-
-          })
-
-          var datosTecnico = new FormData();
-          datosTecnico.append("idTecnico",respuesta["id_tecnico"]);
-
-           $.ajax({
-
-              url:"ajax/tecnicos.ajax.php",
-              method: "POST",
-              data: datosTecnico,
-              cache: false,
-              contentType: false,
-              processData: false,
-              dataType:"json",
-              success:function(respuesta){
-                  
-                  $("#editarTecnico").val(respuesta["id"]);
-                  $("#editarTecnico").html(respuesta["nombre"]);
-
-              }
-
-          })
-      
-         $("#idServicio").val(respuesta["id"]);
-         $("#editarCausa").val(respuesta["causas"]);
-         $("#editarCorreccion").val(respuesta["correcciones"]);
-         $("#editarCosto").val(respuesta["costo"]);
-         $("#editarEstado").val(respuesta["estado"]);
-         $("#editarEstado").html(respuesta["estado"]);
-
-         //$("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);       
-         //$("#editarTelefono").val(respuesta["telefono"]);
-        // $("#editarCelular").val(respuesta["celular"]);
-         //$("#editarEmail").val(respuesta["email"]);       
-          
     }
 
-    })
+  })
+
 
 })
 

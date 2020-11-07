@@ -12,7 +12,7 @@
       
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Crear venta</li>
+      <li class="active">Editar Venta</li>
     
     </ol>
 
@@ -56,7 +56,6 @@
                     $cliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 
                     $porcentajeImpuesto = $venta["impuesto"] * 100 / $venta["neto"];
-
 
                 ?>
 
@@ -119,11 +118,9 @@
 
                        foreach ($categorias as $key => $value) {
 
-                        if($value['nombre'] != $cliente["nombre_razon_social"]){
-                            echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>'; 
+                        if($value['nombre'] != $cliente["nombre_razon_social"]){  
+                            echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>';
                         }
-
-                         
 
                        }
 
@@ -165,7 +162,7 @@
                 
                             <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
 
-                            <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["correcciones"].'" readonly required>
+                            <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" readonly required>
 
                           </div>
 
@@ -337,10 +334,9 @@
 
                  <tr>
                   <th style="width: 10px">#</th>
-                  <th>Imagen</th>
-                  <th>Código</th>
-                  <th>Descripcion</th>
-                  <th>Stock</th>
+                  <th>Descripción del Servicio</th>
+                  <th>Costo</th>
+
                   <th>Acciones</th>
                 </tr>
 

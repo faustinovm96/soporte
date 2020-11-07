@@ -10,13 +10,17 @@ class ModeloPedidos{
 
 	static public function mdlIngresarPedido($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_cliente, id_equipo, id_usuario, fecha, problema) VALUES (:id_cliente, :id_equipo, :id_usuario, :fecha, :problema)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_cliente, id_equipo, id_tecnico,  id_usuario, fecha, problema, causas, solucion, estado) VALUES (:id_cliente, :id_equipo, :id_tecnico, :id_usuario, :fecha, :problema, :causas, :solucion, :estado)");
 
 		$stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_equipo", $datos["id_equipo"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_tecnico", $datos["id_tecnico"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
 		$stmt->bindParam(":problema", $datos["problema"], PDO::PARAM_STR);
+		$stmt->bindParam(":causas", $datos["causas"], PDO::PARAM_STR);
+		$stmt->bindParam(":solucion", $datos["solucion"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		
 		if($stmt->execute()){
 
@@ -71,11 +75,13 @@ class ModeloPedidos{
 
 	static public function mdlEditarPedido($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET fecha = :fecha, problema = :problema WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET fecha = :fecha, problema = :problema, causas = :causas, solucion = :solucion, estado = :estado WHERE id = :id");
 
 		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
 		$stmt->bindParam(":problema", $datos["problema"], PDO::PARAM_STR);
-
+		$stmt->bindParam(":causas", $datos["causas"], PDO::PARAM_STR);
+		$stmt->bindParam(":solucion", $datos["solucion"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){

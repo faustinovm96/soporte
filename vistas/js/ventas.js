@@ -73,27 +73,28 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
       	dataType:"json",
       	success:function(respuesta){
 
-      	    var correcciones = respuesta["correcciones"];
+      	    var descripcion = respuesta["descripcion"];
           	//var stock = respuesta["stock"];
           	var precio = respuesta["costo"];
 
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
-/*
-          	if(stock == 0){
+			/*
+	          	if(stock == 0){
 
-      			swal({
-			      title: "No hay stock disponible",
-			      type: "error",
-			      confirmButtonText: "¡Cerrar!"
-			    });
+	      			swal({
+				      title: "No hay stock disponible",
+				      type: "error",
+				      confirmButtonText: "¡Cerrar!"
+				    });
 
-			    $("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
+				    $("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
 
-			    return;
+				    return;
 
-          	}*/
+	          	}
+          	*/
 
           	$(".nuevoProducto").append(
 
@@ -107,7 +108,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	              
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
 
-	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+correcciones+'" readonly required>'+
+	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+descripcion+'" readonly required>'+
 
 	            '</div>'+
 
@@ -115,7 +116,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	          '<!-- Precio del producto -->'+
 
-	          '<div class="col-xs-3 ingresoPrecio" style="padding-left:0px">'+
+	          '<div class="col-xs-4 ingresoPrecio" style="padding-left:0px">'+
 
 	            '<div class="input-group">'+
 

@@ -344,10 +344,32 @@ MODAL EDITAR CATEGORÍA
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg" name="editarCliente" readonly required>
-                  
+                <select class="form-control input-lg" name="editarCliente" required>
+
                   <option id="editarCliente"></option>
-  
+
+                  <option value="">Seleccione una Opcion</option>
+
+                  <?php 
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                        if($value['nombre'] != $cliente["nombre_razon_social"]){  
+                            echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>';
+                        }
+
+                        /* AÑADIR ESTADO */
+                        
+
+                       }
+
+                   ?>
+              
                 </select>
 
               </div>

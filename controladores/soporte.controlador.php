@@ -1,16 +1,16 @@
 <?php
 
-class ControladorServicios{
+class ControladorSoportes{
 
 	/*=============================================
-	MOSTRAR PRODUCTOS
+	MOSTRAR SOPORTE
 	=============================================*/
 
-	static public function ctrMostrarServicios($item, $valor){
+	static public function ctrMostrarSoportes($item, $valor){
 
-		$tabla = "servicios";
+		$tabla = "soporte_tec";
 
-		$respuesta = ModeloServicios::mdlMostrarServicios($tabla, $item, $valor);
+		$respuesta = ModeloSoportes::mdlMostrarSoportes($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -20,18 +20,20 @@ class ControladorServicios{
 	CREAR SERVICIO
 	=============================================*/
 
-	static public function ctrCrearServicio(){
+	static public function ctrCrearSoporte(){
 
-		if(isset($_POST["nuevaDescripcion"])){
+		if(isset($_POST["nuevaCausa"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaDescripcion"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCausa"])){
 
-		   		$tabla = "servicios";
+		   		$tabla = "soporte_tec";
 
-				$datos = array("descripcion" => $_POST["nuevaDescripcion"],
-								"costo" => $_POST["nuevoCosto"]);
+				$datos = array("pedido" => $_POST["seleccionarPedido"],
+							   "causas" => $_POST["nuevaCausa"],
+							   "solucion" => $_POST["nuevaSolucion"],
+								"estado" => $_POST["nuevoEstado"]);
 
-				$respuesta = ModeloServicios::mdlIngresarServicio($tabla, $datos);
+				$respuesta = ModeloSoportes::mdlIngresarSoporte($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -39,13 +41,13 @@ class ControladorServicios{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido guardado correctamente",
+							  title: "El soporte ha sido guardado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "servicio";
+										window.location = "soporte";
 
 										}
 									})
@@ -61,13 +63,13 @@ class ControladorServicios{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El soporte no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "servicio";
+							window.location = "soporte";
 
 							}
 						})
@@ -82,14 +84,14 @@ class ControladorServicios{
 	/*== ===========================================
 	BORRAR PRODUCTO
 	=============================================*/
-	static public function ctrBorrarServicio(){
+	static public function ctrBorrarSoporte(){
 
-		if(isset($_GET["idServicio"])){
+		if(isset($_GET["idSoporte"])){
 
-			$tabla ="servicios";
-			$datos = $_GET["idServicio"];
+			$tabla ="soporte_tec";
+			$datos = $_GET["idSoporte"];
 
-			$respuesta = ModeloServicios::mdlEliminarServicio($tabla, $datos);
+			$respuesta = ModeloSoportes::mdlEliminarSoporte($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -103,7 +105,7 @@ class ControladorServicios{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "servicio";
+								window.location = "soporte";
 
 								}
 							})
@@ -120,19 +122,21 @@ class ControladorServicios{
 	EDITAR PRODUCTO
 	=============================================*/
 
-	static public function ctrEditarServicio(){
+	static public function ctrEditarSoporte(){
 
-		if(isset($_POST["editarDescripcion"])){
+		if(isset($_POST["editarCausa"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarDescripcion"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCausa"])){
 
-				$tabla = "servicios";
+				$tabla = "soporte_tec";
 
-				$datos = array("descripcion" => $_POST["editarDescripcion"],
-							   "costo" => $_POST["editarCosto"],
-							   "id" => $_POST["idProducto"]);
+				$datos = array("pedido" => $_POST["editarPedido"],
+							   "causas" => $_POST["editarCausa"],
+							   "solucion" => $_POST["editarSolucion"],
+							   "estado" => $_POST["editarEstado"],
+							   "id" => $_POST["idSoporte"]);
 
-				$respuesta = ModeloServicios::mdlEditarServicio($tabla, $datos);
+				$respuesta = ModeloSoportes::mdlEditarSoporte($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -146,7 +150,7 @@ class ControladorServicios{
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "servicio";
+										window.location = "soporte";
 
 										}
 									})
@@ -165,7 +169,7 @@ class ControladorServicios{
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "servicio";
+										window.location = "soporte";
 
 										}
 									})
@@ -187,7 +191,7 @@ class ControladorServicios{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "servicio";
+							window.location = "soporte";
 
 							}
 						})

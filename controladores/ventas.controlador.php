@@ -66,7 +66,7 @@ class ControladorVentas{
 			    $orden = "id";
 
 			    $traerProducto = ModeloServicios::mdlMostrarServicios($tablaProductos, $item, $valor, $orden);*/
-/*
+				/*
 				$item1a = "ventas";
 				$valor1a = $value["cantidad"] + $traerProducto["ventas"];
 
@@ -78,7 +78,7 @@ class ControladorVentas{
 				$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);*/
 
 			}
-/*
+			/*
 			$tablaClientes = "clientes";
 
 			$item = "id";
@@ -92,7 +92,7 @@ class ControladorVentas{
 			$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valor);
 
 			$item1b = "ultima_compra";*/
-/*
+			/*
 			date_default_timezone_set('America/Bogota');
 
 			$fecha = date('Y-m-d');
@@ -105,6 +105,12 @@ class ControladorVentas{
 			GUARDAR LA COMPRA
 			=============================================*/	
 
+			date_default_timezone_set('America/Asuncion');
+
+			$fecha = date('Y-m-d');
+			$hora = date('H:i:s');
+			$fechaActual = $fecha.' '.$hora;
+
 			$tabla = "ventas";
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
@@ -114,6 +120,7 @@ class ControladorVentas{
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
+						   "fecha"=>$fechaActual,
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 
 			var_dump($datos);
@@ -142,6 +149,9 @@ class ControladorVentas{
 				</script>';
 
 			}else {
+
+				/* Daba error al no coincidir nombre de campo de la db */
+				
 
 				echo'<script>
 
@@ -303,6 +313,11 @@ class ControladorVentas{
 			/*=============================================
 			GUARDAR CAMBIOS DE LA COMPRA
 			=============================================*/	
+			date_default_timezone_set('America/Asuncion');
+
+			$fecha = date('Y-m-d');
+			$hora = date('H:i:s');
+			$fechaActual = $fecha.' '.$hora;
 
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
@@ -311,6 +326,7 @@ class ControladorVentas{
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
+						   "fecha"=>$fechaActual,
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 
 

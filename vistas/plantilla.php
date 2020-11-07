@@ -154,6 +154,8 @@ CUERPO DOCUMENTO
 
          $_GET["ruta"] == "reportes" ||
 
+         $_GET["ruta"] == "soporte" ||
+
          $_GET["ruta"] == "crear-factura" ||
 
          $_GET["ruta"] == "crear-venta" ||
@@ -203,6 +205,7 @@ CUERPO DOCUMENTO
 <script src="vistas/js/pedidos.js"></script><!--
 <script src="vistas/js/facturas.js"></script>-->
 <script src="vistas/js/ventas.js"></script>
+<script src="vistas/js/soporte.js"></script>
 
 </body>
 </html>

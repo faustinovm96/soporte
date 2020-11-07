@@ -28,11 +28,20 @@ class ControladorPedidos{
 
 				$tabla = "pedidos";
 
+				$fecha = date('Y-m-d');
+				$hora = date('H:i:s');
+
+				$fechaActual = $fecha.' '.$hora;
+
 				$datos = array("id_usuario" => $_POST["idUsuario"],
 							   "id_cliente" => $_POST["nuevoCliente2"],
 							   "id_equipo" => $_POST["nuevoEquipo"],
-							   "fecha" => $_POST["nuevaFecha"],
-							   "problema" => $_POST["nuevoProblema"]);
+							   "id_tecnico" => $_POST["nuevoTecnico"],
+							   "fecha" => $fechaActual,
+							   "problema" => $_POST["nuevoProblema"],
+								"causas" => $_POST["nuevaCausa"],
+								"solucion" => $_POST["nuevaSolucion"],
+								"estado" => $_POST["nuevoEstado"]);
 
 				var_dump($datos);
 
@@ -95,9 +104,17 @@ class ControladorPedidos{
 
 				$tabla = "pedidos";
 
+				$fecha = date('Y-m-d');
+				$hora = date('H:i:s');
+
+				$fechaActual = $fecha.' '.$hora;
+
 				$datos = array(/*"id_cliente" => $_POST["editarCliente"],*/
-							   "fecha" => $_POST["editarFecha"],
+							   "fecha" => $fechaActual,
 							   "problema" => $_POST["editarProblema"],
+							   "causas" => $_POST["editarCausa"],
+							   "solucion" => $_POST["editarSolucion"],
+							   "estado" => $_POST["editarEstado"],
 							   "id" => $_POST["idPedido"]);
 
 				var_dump($datos);
@@ -135,7 +152,7 @@ class ControladorPedidos{
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "equipos";
+										window.location = "pedidos";
 
 										}
 									})
@@ -157,7 +174,7 @@ class ControladorPedidos{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "productos";
+							window.location = "pedidos";
 
 							}
 						})

@@ -27,7 +27,7 @@ class AjaxServicios{
 
     }else if($this->nombreProducto != ""){
 
-      $item = "correcciones";
+      $item = "descripcion";
       $valor = $this->nombreProducto;
 
       $respuesta = ControladorServicios::ctrMostrarServicios($item, $valor);

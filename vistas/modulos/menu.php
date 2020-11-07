@@ -84,17 +84,17 @@
 				</a>
 
 			</li>';
-
+			/*
 			echo '<li>
 
-				<a href="taller">
+				<a href="soporte">
 
 					<i class="fa fa-users"></i>
 					<span>Soporte Técnico</span>
 
 				</a>
 
-			</li>';
+			</li>';*/
 
 			echo '<li class="treeview">
 
@@ -102,7 +102,7 @@
 
 					<i class="fa fa-list-ul"></i>
 					
-					<span>Ventas</span>
+					<span>Movimientos</span>
 					
 					<span class="pull-right-container">
 					
@@ -119,7 +119,7 @@
 						<a href="crear-venta">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Agregar Venta</span>
+							<span>Agregar</span>
 
 						</a>
 
@@ -130,7 +130,7 @@
 						<a href="ventas">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Administrar Ventas</span>
+							<span>Administrar</span>
 
 						</a>
 

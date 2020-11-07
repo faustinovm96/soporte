@@ -25,7 +25,7 @@ class ControladorEquipos{
 		if(isset($_POST["nuevoTipo"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaMarca"]) &&
-			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoModelo"]) &&	
+			   
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoAccesorio"])){
 
 				$tabla = "equipos_inf";

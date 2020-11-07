@@ -20,7 +20,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Crear venta
+      Agregar Movimiento
     
     </h1>
 
@@ -154,7 +154,41 @@ if($_SESSION["perfil"] == "Especial"){
                   </div>
                 
                 </div>
+                <!--
+                <div class="form-group">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                    
+                     <select class="form-control" id="nuevoEquipo" name="nuevoEquipo" required>
+                  
+                      <option value="">Selecionar Equipo</option>
 
+                      <?php
+                      /*
+                      $item = null;
+                      $valor = null;
+
+                      $equipos = ControladorEquipos::ctrMostrarEquipos($item, $valor);
+
+                      //$id_valor_cliente = "";
+
+                      foreach ($equipos as $key => $value) {
+                        
+                        echo '<option value="'.$value["id"].'">'.$value["tipo"].' '.$value["marca"].' '.$value["modelo"].'</option>';
+                        //$id_valor_cliente = $value["id"];
+
+                      }
+                      */
+                      ?>
+      
+                    </select>
+                  
+                  </div>
+                
+                </div>
+                -->
                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
                 ======================================--> 
@@ -202,7 +236,7 @@ if($_SESSION["perfil"] == "Especial"){
                             
                             <div class="input-group">
                            
-                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" value="10" placeholder="0" required>
 
                                <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
 
@@ -311,9 +345,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                  <tr>
                   <th style="width: 10px">#</th>
-                  <th>Cliente</th>
-                  <th>Equipo</th>
-                  <th>Correcciones</th>
+                  <th>Descripción del Servicio</th>
                   <th>Costo</th>
 
                   <th>Acciones</th>

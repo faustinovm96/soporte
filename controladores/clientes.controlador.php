@@ -188,7 +188,7 @@ class ControladorClientes{
 	ELIMINAR CLIENTE
 	=============================================*/
 
-	static public function ctrEliminarCliente(){
+	static public function ctrBorrarCliente(){
 
 		if(isset($_GET["idCliente"])){
 

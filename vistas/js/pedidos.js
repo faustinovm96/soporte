@@ -34,8 +34,8 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
             dataType:"json",
             success:function(respuesta){
                 
-                $("#editarCliente2").val(respuesta["id"]);
-                $("#editarCliente2").html(respuesta["nombre_razon_social"]);
+                $("#editarCliente").val(respuesta["id"]);
+                $("#editarCliente").html(respuesta["nombre_razon_social"]);
 
             }
 
@@ -65,6 +65,10 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
       	 $("#idPedido").val(respuesta["id"]);
          $("#editarFecha").val(respuesta["fecha"]);
          $("#editarProblema").val(respuesta["problema"]);
+         $("#editarCausa").val(respuesta["causas"]);
+         $("#editarSolucion").val(respuesta["solucion"]);
+         $("#editarEstado").val(respuesta["estado"]);
+         $("#editarEstado").html(respuesta["estado"]);
           
 	  }
 

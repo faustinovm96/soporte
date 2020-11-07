@@ -19,9 +19,9 @@ if($_SESSION["perfil"] == "Especial"){
   <section class="content-header">
     
     <h1>
-      <center>
-      Administrar Cliente
-    </center>
+
+      Administrar Clientes
+
     </h1>
 
     <ol class="breadcrumb">
@@ -401,7 +401,7 @@ MODAL EDITAR CLIENTE
 <?php
 
   $eliminarCliente = new ControladorClientes();
-  $eliminarCliente -> ctrEliminarCliente();
+  $eliminarCliente -> ctrBorrarCliente();
 
 ?>
 
