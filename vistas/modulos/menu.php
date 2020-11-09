@@ -23,7 +23,7 @@
 
 				<a href="usuarios">
 
-					<i class="fa fa-user"></i>
+					<i class="fa fa-user-circle"></i>
 					<span>Usuarios</span>
 
 				</a>
@@ -45,7 +45,7 @@
 
 				<a href="tecnicos">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-wrench"></i>
 					<span>Técnicos</span>
 
 				</a>
@@ -56,7 +56,7 @@
 
 				<a href="equipos">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-desktop"></i>
 					<span>Equipos</span>
 
 				</a>
@@ -67,7 +67,7 @@
 
 				<a href="servicio">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-server"></i>
 					<span>Servicios</span>
 
 				</a>
@@ -78,7 +78,7 @@
 
 				<a href="pedidos">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-check-circle"></i>
 					<span>Pedidos</span>
 
 				</a>
@@ -100,7 +100,7 @@
 
 				<a href="#">
 
-					<i class="fa fa-list-ul"></i>
+					<i class="fa fa-shopping-cart"></i>
 					
 					<span>Movimientos</span>
 					
@@ -147,7 +147,7 @@
 
 				<a href="reportes">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-book"></i>
 					<span>Reportes</span>
 
 				</a>

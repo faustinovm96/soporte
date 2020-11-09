@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Vendedor"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Administrar Equipos
     
@@ -26,9 +26,9 @@ if($_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
-      <li class="active">Administrar Equipos Informáticos</li>
+      <li class="active">Administrar Equipos</li>
     
     </ol>
 
@@ -38,11 +38,11 @@ if($_SESSION["perfil"] == "Vendedor"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarEquipo">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarEquipo" style="font-size: 16px;">
           
-          Agregar Equipo
+          <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
         </button>
 
@@ -57,14 +57,14 @@ if($_SESSION["perfil"] == "Vendedor"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Cliente</th>
-           <th>Tipo</th>
-           <th>Marca</th>
-           <th>Modelo</th>
-           <th>Serie</th>
-           <th>Accesorios</th>
+           <th style="text-align: center;">Cliente</th>
+           <th style="text-align: center;">Tipo</th>
+           <th style="text-align: center;">Marca</th>
+           <th style="text-align: center;">Modelo</th>
+           <th style="text-align: center;">Serie</th>
+           <th style="text-align: center;">Accesorios</th>
 
-           <th>Acciones</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -104,7 +104,7 @@ if($_SESSION["perfil"] == "Vendedor"){
   
                     echo '
                     
-                    <td>
+                    <td style="text-align: center;">
 
                       <div class="btn-group">
                           
@@ -139,7 +139,7 @@ if($_SESSION["perfil"] == "Vendedor"){
 MODAL AGREGAR equipo
 ======================================-->
 
-<div id="modalAgregarEquipo" class="modal fade" role="dialog">
+<div id="modalAgregarEquipo" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -153,7 +153,7 @@ MODAL AGREGAR equipo
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Agregar Equipo</h4>
 
@@ -175,7 +175,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <select class="form-control input-lg" id="nuevoCliente" name="nuevoCliente" required>
                   
@@ -209,7 +209,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-laptop"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoTipo" placeholder="Ingresar tipo del equipo" required>
 
@@ -223,7 +223,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-registered"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaMarca" placeholder="Ingresar marca del equipo" required>
 
@@ -237,7 +237,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-fax"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoModelo" placeholder="Ingresar modelo del equipo" required>
 
@@ -265,7 +265,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-save"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoAccesorio" placeholder="Ingresar accesorio del equipo" required>
 
@@ -283,7 +283,7 @@ MODAL AGREGAR equipo
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Equipo</button>
 
@@ -308,7 +308,7 @@ MODAL AGREGAR equipo
 MODAL EDITAR CATEGORÍA
 ======================================-->
 
-<div id="modalEditarEquipo" class="modal fade" role="dialog">
+<div id="modalEditarEquipo" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -322,7 +322,7 @@ MODAL EDITAR CATEGORÍA
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Editar equipo</h4>
 
@@ -342,7 +342,7 @@ MODAL EDITAR CATEGORÍA
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <select class="form-control input-lg" name="editarCliente" required>
 
@@ -359,7 +359,7 @@ MODAL EDITAR CATEGORÍA
 
                        foreach ($categorias as $key => $value) {
 
-                        if($value['nombre'] != $cliente["nombre_razon_social"]){  
+                        if($value['nombre_razon_social'] != $cliente["nombre_razon_social"]){  
                             echo '<option value="'.$value["id"].'">'.$value["nombre_razon_social"].'</option>';
                         }
 
@@ -382,7 +382,7 @@ MODAL EDITAR CATEGORÍA
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-laptop"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarTipo" name="editarTipo" placeholder="Ingresar tipo de equipo" required>
 
@@ -398,7 +398,7 @@ MODAL EDITAR CATEGORÍA
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-registered"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarMarca" name="editarMarca" placeholder="Ingresar marca del equipo" required>
 
@@ -412,7 +412,7 @@ MODAL EDITAR CATEGORÍA
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-fax"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarModelo" name="editarModelo" placeholder="Ingresar modelo del equipo" required>
 
@@ -440,7 +440,7 @@ MODAL EDITAR CATEGORÍA
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-save"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarAccesorio" name="editarAccesorio" placeholder="Ingresar accesorio del equipo" required>
 
@@ -458,7 +458,7 @@ MODAL EDITAR CATEGORÍA
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 

@@ -6,14 +6,14 @@ $orden = "id";
 
 $ventas = ControladorVentas::ctrSumaTotalVentas();
 
-$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-$totalCategorias = count($categorias);
+$pedidos = ControladorPedidos::ctrMostrarPedidos($item, $valor);
+$totalPedidos = count($pedidos);
 
 $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
 $totalClientes = count($clientes);
 
-$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
-$totalProductos = count($productos);
+$servicios = ControladorServicios::ctrMostrarServicios($item, $valor);
+$totalServicios = count($servicios);
 
 ?>
 
@@ -25,9 +25,9 @@ $totalProductos = count($productos);
     
     <div class="inner">
       
-      <h3>Gs.<?php echo number_format($ventas["total"],2); ?></h3>
+      <h2><b>Gs.<?php echo number_format($ventas["total"],0); ?></b></h2>
 
-      <p>Ventas</p>
+      <p><b>Ventas</b></p>
     
     </div>
     
@@ -53,9 +53,9 @@ $totalProductos = count($productos);
     
     <div class="inner">
     
-      <h3><?php echo number_format($totalCategorias); ?></h3>
+      <h2><b><?php echo number_format($totalPedidos); ?></b></h2>
 
-      <p>Categorías</p>
+      <p><b>Pedidos</b></p>
     
     </div>
     
@@ -65,7 +65,7 @@ $totalProductos = count($productos);
     
     </div>
     
-    <a href="categorias" class="small-box-footer">
+    <a href="pedidos" class="small-box-footer">
       
       Más info <i class="fa fa-arrow-circle-right"></i>
     
@@ -81,9 +81,9 @@ $totalProductos = count($productos);
     
     <div class="inner">
     
-      <h3><?php echo number_format($totalClientes); ?></h3>
+      <h2><b><?php echo number_format($totalClientes); ?></b></h2>
 
-      <p>Clientes</p>
+      <p><b>Clientes</b></p>
   
     </div>
     
@@ -109,9 +109,9 @@ $totalProductos = count($productos);
   
     <div class="inner">
     
-      <h3><?php echo number_format($totalProductos); ?></h3>
+      <h2><b><?php echo number_format($totalServicios); ?></b></h2>
 
-      <p>Productos</p>
+      <p><b>Servicios</b></p>
     
     </div>
     
@@ -121,7 +121,7 @@ $totalProductos = count($productos);
     
     </div>
     
-    <a href="productos" class="small-box-footer">
+    <a href="servicio" class="small-box-footer">
       
       Más info <i class="fa fa-arrow-circle-right"></i>
     

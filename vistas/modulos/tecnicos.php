@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Especial"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Administrar Técnicos
     
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Administrar Técnicos</li>
     
@@ -38,11 +38,11 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarTecnico">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarTecnico" style="font-size: 16px;">
           
-          Agregar Técnico
+         <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
         </button>
 
@@ -57,14 +57,14 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th style="width:60px">Documento</th>
-           <th>Nombre</th>
-           <th>Dirección</th>
-           <th>Celular</th>
-           <th>E-mail</th>
+           <th style="width:60px; text-align: center;">Documento</th>
+           <th style="text-align: center;">Nombre</th>
+           <th style="text-align: center;">Dirección</th>
+           <th style="text-align: center;">Celular</th>
+           <th style="text-align: center;">E-mail</th>
            
 
-           <th>Acciones</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -96,7 +96,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$value["email"].'</td>';
 
-            echo  ' <td>
+            echo  ' <td style="text-align: center;">
 
                       <div class="btn-group">
                           
@@ -130,7 +130,7 @@ if($_SESSION["perfil"] == "Especial"){
 MODAL AGREGAR TECNICO
 ======================================-->
 
-<div id="modalAgregarTecnico" class="modal fade" role="dialog">
+<div id="modalAgregarTecnico" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -144,7 +144,7 @@ MODAL AGREGAR TECNICO
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Agregar Técnico</h4>
 
@@ -164,7 +164,7 @@ MODAL AGREGAR TECNICO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-id-badge"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoDocumento" placeholder="Ingresar Documento del Técnico" required>
 
@@ -178,7 +178,7 @@ MODAL AGREGAR TECNICO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar Nombre del Técnico" required>
 
@@ -200,6 +200,7 @@ MODAL AGREGAR TECNICO
 
             </div> 
 
+            
             <!-- Celular del Técnico -->
             
             <div class="form-group">
@@ -220,7 +221,7 @@ MODAL AGREGAR TECNICO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar Email del Técnico" required>
 
@@ -238,7 +239,7 @@ MODAL AGREGAR TECNICO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Técnico</button>
 
@@ -263,7 +264,7 @@ MODAL AGREGAR TECNICO
 MODAL EDITAR TECNICO
 ======================================-->
 
-<div id="modalEditarTecnico" class="modal fade" role="dialog">
+<div id="modalEditarTecnico" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -276,8 +277,8 @@ MODAL EDITAR TECNICO
         ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--
+          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Editar Técnico</h4>
 
@@ -297,7 +298,7 @@ MODAL EDITAR TECNICO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-id-badge"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarDocumento" name="editarDocumento" value="" required>
 
@@ -321,6 +322,20 @@ MODAL EDITAR TECNICO
 
             </div>
 
+            <!-- ENTRADA PARA LA DIRECCION -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editarDireccion" name="editarDireccion" value="" required>
+
+              </div>
+
+            </div>
+
             <!-- ENTRADA PARA EL CELULAR -->
             
             <div class="form-group">
@@ -335,27 +350,13 @@ MODAL EDITAR TECNICO
 
             </div>
 
-            <!-- ENTRADA PARA LA DIRECCION -->
-
-             <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
-
-                <input type="text" class="form-control input-lg" id="editarDireccion" name="editarDireccion" value="" required>
-
-              </div>
-
-            </div>
-
             <!-- ENTRADA PARA EL EMAIL -->
 
              <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarEmail" name="editarEmail" value="" required>
 
@@ -373,7 +374,7 @@ MODAL EDITAR TECNICO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Modificar Técnico</button>
 

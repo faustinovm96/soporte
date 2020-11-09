@@ -34,9 +34,9 @@ class ControladorPedidos{
 				$fechaActual = $fecha.' '.$hora;
 
 				$datos = array("id_usuario" => $_POST["idUsuario"],
-							   "id_cliente" => $_POST["nuevoCliente2"],
-							   "id_equipo" => $_POST["nuevoEquipo"],
-							   "id_tecnico" => $_POST["nuevoTecnico"],
+							   "id_cliente" => $_POST["seleccionarCliente"],
+							   "id_equipo" => $_POST["seleccionarEquipo"],
+							   "id_tecnico" => $_POST["seleccionarTecnico"],
 							   "fecha" => $fechaActual,
 							   "problema" => $_POST["nuevoProblema"],
 								"causas" => $_POST["nuevaCausa"],
@@ -53,7 +53,7 @@ class ControladorPedidos{
 
 						swal({
 							  type: "success",
-							  title: "El pedido ha sido guardado correctamente",
+							  title: "El pedido ha sido guardado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -75,7 +75,7 @@ class ControladorPedidos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El pedido no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -109,7 +109,9 @@ class ControladorPedidos{
 
 				$fechaActual = $fecha.' '.$hora;
 
-				$datos = array(/*"id_cliente" => $_POST["editarCliente"],*/
+				$datos = array("id_cliente" => $_POST["editarCliente"],
+								"id_equipo" => $_POST["editarEquipo"],
+								"id_tecnico" => $_POST["editarTecnico"],
 							   "fecha" => $fechaActual,
 							   "problema" => $_POST["editarProblema"],
 							   "causas" => $_POST["editarCausa"],
@@ -127,7 +129,7 @@ class ControladorPedidos{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido editado correctamente",
+							  title: "El pedido ha sido modificado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -145,8 +147,8 @@ class ControladorPedidos{
 					echo'<script>
 
 						swal({
-							  type: "success",
-							  title: "El producto ha sido editado correctamente",
+							  type: "error",
+							  title: "Ha ocurrido un error",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -168,7 +170,7 @@ class ControladorPedidos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El pedido no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -203,7 +205,7 @@ class ControladorPedidos{
 
 				swal({
 					  type: "success",
-					  title: "El pedido ha sido borrado correctamente",
+					  title: "El pedido ha sido borrado",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){

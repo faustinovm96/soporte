@@ -45,7 +45,7 @@ class ControladorEquipos{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido guardado correctamente",
+							  title: "El equipo ha sido guardado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -96,7 +96,7 @@ class ControladorEquipos{
 
 				$tabla = "equipos_inf";
 
-				$datos = array(/*"id_cliente" => $_POST["editarCliente"],*/
+				$datos = array("id_cliente" => $_POST["editarCliente"],
 							   "tipo" => $_POST["editarTipo"],
 							   "marca" => $_POST["editarMarca"],
 							   "modelo" => $_POST["editarModelo"],
@@ -114,7 +114,7 @@ class ControladorEquipos{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido editado correctamente",
+							  title: "El equipo ha sido modificado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -132,8 +132,8 @@ class ControladorEquipos{
 					echo'<script>
 
 						swal({
-							  type: "success",
-							  title: "El producto ha sido editado correctamente",
+							  type: "error",
+							  title: "Algo ha salido mal",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -155,7 +155,7 @@ class ControladorEquipos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El equipo no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -190,7 +190,7 @@ class ControladorEquipos{
 
 				swal({
 					  type: "success",
-					  title: "El producto ha sido borrado correctamente",
+					  title: "El equipo ha sido borrado",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){

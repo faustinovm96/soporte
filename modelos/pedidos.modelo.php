@@ -75,8 +75,11 @@ class ModeloPedidos{
 
 	static public function mdlEditarPedido($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET fecha = :fecha, problema = :problema, causas = :causas, solucion = :solucion, estado = :estado WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_cliente = :id_cliente, id_equipo = :id_equipo, id_tecnico = :id_tecnico, fecha = :fecha, problema = :problema, causas = :causas, solucion = :solucion, estado = :estado WHERE id = :id");
 
+		$stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_equipo", $datos["id_equipo"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_tecnico", $datos["id_tecnico"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
 		$stmt->bindParam(":problema", $datos["problema"], PDO::PARAM_STR);
 		$stmt->bindParam(":causas", $datos["causas"], PDO::PARAM_STR);

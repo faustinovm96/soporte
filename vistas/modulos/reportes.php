@@ -13,11 +13,11 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 }
 
 ?>
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Reportes de ventas
     
@@ -25,7 +25,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Reportes de ventas</li>
     
@@ -42,12 +42,12 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
         <div class="input-group">
 
           <button type="button" class="btn btn-default" id="daterange-btn2">
-           
+           <!--
             <span>
               <i class="fa fa-calendar"></i> Rango de fecha
             </span>
 
-            <i class="fa fa-caret-down"></i>
+            <i class="fa fa-caret-down"></i>-->
 
           </button>
 
@@ -90,36 +90,36 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
             ?>
 
           </div>
-
+<!--
            <div class="col-md-6 col-xs-12">
              
-            <?php
+              <?php
 
-            include "reportes/productos-mas-vendidos.php";
+              //include "reportes/productos-mas-vendidos.php";
 
-            ?>
+              ?>
 
-           </div>
-
+           </div>-->
+<!--
             <div class="col-md-6 col-xs-12">
              
-            <?php
+              <?php
 
-            include "reportes/vendedores.php";
+             // include "reportes/vendedores.php";
 
-            ?>
+              ?>
 
-           </div>
-
+           </div>-->
+<!--
            <div class="col-md-6 col-xs-12">
              
-            <?php
+              <?php
 
-            include "reportes/compradores.php";
+              //include "reportes/compradores.php";
 
-            ?>
+              ?>
 
-           </div>
+           </div>-->
           
         </div>
 

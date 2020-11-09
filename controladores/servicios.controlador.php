@@ -39,7 +39,7 @@ class ControladorServicios{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido guardado correctamente",
+							  title: "El servicio ha sido guardado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -61,7 +61,7 @@ class ControladorServicios{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El servicio no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -97,7 +97,7 @@ class ControladorServicios{
 
 				swal({
 					  type: "success",
-					  title: "El producto ha sido borrado correctamente",
+					  title: "El servicio ha sido borrado",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
@@ -140,7 +140,7 @@ class ControladorServicios{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido editado correctamente",
+							  title: "El servicio ha sido modificado",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -158,8 +158,8 @@ class ControladorServicios{
 					echo'<script>
 
 						swal({
-							  type: "success",
-							  title: "Error",
+							  type: "error",
+							  title: "Ha ocurrido un error",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
 							  }).then(function(result){
@@ -181,7 +181,7 @@ class ControladorServicios{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El servicio no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

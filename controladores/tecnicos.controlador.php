@@ -30,7 +30,7 @@ class ControladorTecnicos{
 
 					swal({
 						  type: "success",
-						  title: "El Técnico ha sido guardado correctamente",
+						  title: "El Técnico ha sido guardado",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -114,7 +114,7 @@ class ControladorTecnicos{
 
 					swal({
 						  type: "success",
-						  title: "El Técnico ha sido cambiada correctamente",
+						  title: "El Técnico ha sido modificado",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -132,8 +132,8 @@ class ControladorTecnicos{
 					echo'<script>
 
 					swal({
-						  type: "success",
-						  title: "Eh Guachin",
+						  type: "error",
+						  title: "Ha ocurrido un error",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -193,7 +193,7 @@ class ControladorTecnicos{
 
 					swal({
 						  type: "success",
-						  title: "El técnico ha sido borrado correctamente",
+						  title: "El técnico ha sido borrado",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

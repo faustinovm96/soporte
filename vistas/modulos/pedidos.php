@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Especial"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Administrar Pedidos
     
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Administrar Pedidos</li>
     
@@ -38,11 +38,11 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPedido">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPedido" style="font-size: 16px;">
           
-          Agregar Pedido
+          <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
         </button>
 
@@ -57,16 +57,16 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Cliente</th> 
-           <th>Equipo</th> 
-           <th>Técnico</th> 
-           <th>Fecha</th>
-           <th>Problema</th>   
-           <th>Causas</th> 
-           <th>Solución</th> 
-           <th>Estado</th>        
+           <th style="text-align: center;">Cliente</th> 
+           <th style="text-align: center;">Equipo</th> 
+           <th style="text-align: center;">Técnico</th> 
+           <th style="text-align: center;">Fecha</th>
+           <th style="text-align: center;">Problema</th>   
+           <th style="text-align: center;">Causas</th> 
+           <th style="text-align: center;">Solución</th> 
+           <th style="text-align: center;">Estado</th>        
 
-           <th>Acciones</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -119,7 +119,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$pedidos[$i]["estado"].'</td>
 
-                    <td>
+                    <td style="text-align: center;">
 
                       <div class="btn-group">
                           
@@ -157,7 +157,7 @@ if($_SESSION["perfil"] == "Especial"){
 MODAL AGREGAR PEDIDO
 ======================================-->
 
-<div id="modalAgregarPedido" class="modal fade" role="dialog">
+<div id="modalAgregarPedido" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -171,7 +171,7 @@ MODAL AGREGAR PEDIDO
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Agregar Pedido</h4>
 
@@ -186,7 +186,7 @@ MODAL AGREGAR PEDIDO
           <div class="box-body">
 
             <!-- ENTRADA PARA LA FECHA -->
-<!--
+            <!--
             <div class="form-group">
               
               <div class="input-group">
@@ -205,7 +205,7 @@ MODAL AGREGAR PEDIDO
                 
                   <div class="input-group">
                     
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span> 
 
                     <input type="text" class="form-control input-lg" id="nuevoUser" name="nuevoUser" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
 
@@ -221,9 +221,9 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                <select class="form-control input-lg" id="nuevoCliente2" name="nuevoCliente2" required>
+                <select class="form-control input-lg" name="seleccionarCliente" required>
                   
                   <option value="">Selecionar Cliente</option>
 
@@ -257,9 +257,9 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-laptop"></i></span> 
 
-                <select class="form-control input-lg" id="nuevoEquipo" name="nuevoEquipo" required>
+                <select class="form-control input-lg" name="seleccionarEquipo" required>
                   
                   <option value="">Selecionar Equipo</option>
 
@@ -293,9 +293,9 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-wrench"></i></span> 
 
-                <select class="form-control input-lg" id="nuevoTecnico" name="nuevoTecnico" required>
+                <select class="form-control input-lg" name="seleccionarTecnico" required>
                   
                   <option value="">Selecionar Técnico</option>
 
@@ -329,7 +329,7 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-times"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoProblema" placeholder="Ingresar Problema del Equipo" required>
 
@@ -343,7 +343,7 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-exclamation"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaCausa" placeholder="Ingresar Causas del Problema">
 
@@ -357,7 +357,7 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-folder"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaSolucion" placeholder="Ingresar Solución Propuesta">
 
@@ -371,7 +371,7 @@ MODAL AGREGAR PEDIDO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
 
                 <select class="form-control input-lg" name="nuevoEstado">
                   
@@ -399,7 +399,7 @@ MODAL AGREGAR PEDIDO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Pedido</button>
 
@@ -424,7 +424,7 @@ MODAL AGREGAR PEDIDO
 MODAL EDITAR CLIENTE
 ======================================-->
 
-<div id="modalEditarPedido" class="modal fade" role="dialog">
+<div id="modalEditarPedido" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -438,7 +438,7 @@ MODAL EDITAR CLIENTE
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Editar cliente</h4>
 
@@ -458,7 +458,7 @@ MODAL EDITAR CLIENTE
                 
                   <div class="input-group">
                     
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span> 
 
                     <input type="text" class="form-control input-lg" id="editarUser" name="editarUser" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
 
@@ -476,7 +476,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <select class="form-control input-lg" name="editarCliente"  required>
                   
@@ -512,7 +512,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-laptop"></i></span> 
 
                 <select class="form-control input-lg" name="editarEquipo" required>
                   
@@ -540,13 +540,47 @@ MODAL EDITAR CLIENTE
 
             </div>
 
+            <!-- ENTRADA PARA EL tecnico -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-wrench"></i></span> 
+
+                <select class="form-control input-lg" name="editarTecnico"  required>
+                  
+                  <option id="editarTecnico"></option>
+                  <option value="">Seleccionar Técnico</option>
+
+                  <?php 
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorTecnicos::ctrMostrarTecnicos($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                            echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+
+                       }
+
+                   ?>
+  
+                </select>
+
+              </div>
+
+            </div>
+
             <!-- ENTRADA PARA el EMAIL -->
 
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-times"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarProblema" name="editarProblema" placeholder="Ingresar Problema del Equipo" required>
 
@@ -560,7 +594,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-exclamation"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarCausa" name="editarCausa" placeholder="Ingresar Causas del Problema">
 
@@ -574,7 +608,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-folder"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarSolucion" name="editarSolucion" placeholder="Ingresar Solución Propuesta">
 
@@ -588,7 +622,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
 
                 <select class="form-control input-lg" name="editarEstado">
                   
@@ -618,7 +652,7 @@ MODAL EDITAR CLIENTE
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
 

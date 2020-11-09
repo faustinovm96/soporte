@@ -2,7 +2,7 @@
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Editar venta
     
@@ -156,7 +156,7 @@
                   
                   echo '<div class="row" style="padding:5px 15px">
             
-                        <div class="col-xs-9" style="padding-right:0px">
+                        <div class="col-xs-8" style="padding-right:0px">
             
                           <div class="input-group">
                 
@@ -168,7 +168,7 @@
 
                         </div>
 
-                        <div class="col-xs-3 ingresoPrecio" style="padding-left:0px">
+                        <div class="col-xs-4 ingresoPrecio" style="padding-left:0px">
 
                           <div class="input-group">
 
@@ -204,7 +204,7 @@
                   ENTRADA IMPUESTOS Y TOTAL
                   ======================================-->
                   
-                  <div class="col-xs-8 pull-right">
+                  <div class="col-xs-12 pull-right">
                     
                     <table class="table">
 

@@ -181,7 +181,7 @@ class ControladorUsuarios{
 					swal({
 
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡El usuario ha sido guardado!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
@@ -388,7 +388,7 @@ class ControladorUsuarios{
 
 					swal({
 						  type: "success",
-						  title: "El usuario ha sido editado correctamente",
+						  title: "El usuario ha sido modificado",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result) {
@@ -455,7 +455,7 @@ class ControladorUsuarios{
 
 				swal({
 					  type: "success",
-					  title: "El usuario ha sido borrado correctamente",
+					  title: "El usuario ha sido borrado",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

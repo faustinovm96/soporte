@@ -13,11 +13,11 @@ if($_SESSION["perfil"] == "Especial"){
 }
 
 ?>
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Movimientos
     
@@ -25,7 +25,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Administrar ventas</li>
     
@@ -37,13 +37,13 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
         <a href="crear-venta">
 
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" style="font-size: 16px;">
             
-            Agregar venta
+            <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
           </button>
 
@@ -70,14 +70,14 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Código factura</th>
-           <th>Cliente</th>
-           <th>Usuario</th>
-           <th>Forma de pago</th>
-           <th>Neto</th>
-           <th>Total</th> 
-           <th>Fecha</th>
-           <th>Acciones</th>
+           <th style="text-align: center;">Código factura</th>
+           <th style="text-align: center;">Cliente</th>
+           <th style="text-align: center;">Usuario</th>
+           <th style="text-align: center;">Forma de pago</th>
+           <th style="text-align: center;">Neto</th>
+           <th style="text-align: center;">Total</th> 
+           <th style="text-align: center;">Fecha</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -131,7 +131,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                   <td>'.$value["fecha"].'</td>
 
-                  <td>
+                  <td style="text-align: center;">
 
                     <div class="btn-group">
                         

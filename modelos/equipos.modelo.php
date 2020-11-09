@@ -72,9 +72,9 @@ class ModeloEquipos{
 	=============================================*/
 	static public function mdlEditarEquipo($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET tipo = :tipo, marca = :marca, modelo = :modelo, numero_serie = :numero_serie, accesorios = :accesorios WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_cliente = :id_cliente, tipo = :tipo, marca = :marca, modelo = :modelo, numero_serie = :numero_serie, accesorios = :accesorios WHERE id = :id");
 
-		//$stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
 		$stmt->bindParam(":tipo", $datos["tipo"], PDO::PARAM_STR);
 		$stmt->bindParam(":marca", $datos["marca"], PDO::PARAM_STR);
 		$stmt->bindParam(":modelo", $datos["modelo"], PDO::PARAM_STR);

@@ -135,7 +135,7 @@ class ControladorVentas{
 
 				swal({
 					  type: "success",
-					  title: "La venta ha sido guardada correctamente",
+					  title: "La venta ha sido guardada",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
@@ -159,7 +159,7 @@ class ControladorVentas{
 
 				swal({
 					  type: "error",
-					  title: "La venta ha sido guardada correctamente",
+					  title: "La venta ha sido guardada",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
@@ -340,7 +340,7 @@ class ControladorVentas{
 
 				swal({
 					  type: "success",
-					  title: "La venta ha sido editada correctamente",
+					  title: "La venta ha sido modificada",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then((result) => {
@@ -378,7 +378,7 @@ class ControladorVentas{
 			/*=============================================
 			ACTUALIZAR FECHA ÚLTIMA COMPRA
 			=============================================*/
-
+			/*
 			$tablaClientes = "clientes";
 
 			$itemVentas = null;
@@ -427,12 +427,12 @@ class ControladorVentas{
 
 				$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item, $valor, $valorIdCliente);
 
-			}
+			}*/
 
 			/*=============================================
 			FORMATEAR TABLA DE PRODUCTOS Y LA DE CLIENTES
 			=============================================*/
-
+			/*
 			$productos =  json_decode($traerVenta["productos"], true);
 
 			$totalProductosComprados = array();
@@ -471,7 +471,7 @@ class ControladorVentas{
 			$item1a = "compras";
 			$valor1a = $traerCliente["compras"] - array_sum($totalProductosComprados);
 
-			$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valorCliente);
+			$comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valorCliente);*/
 
 			/*=============================================
 			ELIMINAR VENTA
@@ -485,7 +485,7 @@ class ControladorVentas{
 
 				swal({
 					  type: "success",
-					  title: "La venta ha sido borrada correctamente",
+					  title: "La venta ha sido borrada",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
@@ -563,7 +563,7 @@ class ControladorVentas{
 					<td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 
 					<td style='font-weight:bold; border:1px solid #eee;'>CLIENTE</td>
 					<td style='font-weight:bold; border:1px solid #eee;'>VENDEDOR</td>
-					<td style='font-weight:bold; border:1px solid #eee;'>CANTIDAD</td>
+					
 					<td style='font-weight:bold; border:1px solid #eee;'>PRODUCTOS</td>
 					<td style='font-weight:bold; border:1px solid #eee;'>IMPUESTO</td>
 					<td style='font-weight:bold; border:1px solid #eee;'>NETO</td>		
@@ -579,18 +579,18 @@ class ControladorVentas{
 
 			 echo utf8_decode("<tr>
 			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
-			 			<td style='border:1px solid #eee;'>".$cliente["nombre"]."</td>
+			 			<td style='border:1px solid #eee;'>".$cliente["nombre_razon_social"]."</td>
 			 			<td style='border:1px solid #eee;'>".$vendedor["nombre"]."</td>
 			 			<td style='border:1px solid #eee;'>");
 
 			 	$productos =  json_decode($item["productos"], true);
-
+/*
 			 	foreach ($productos as $key => $valueProductos) {
 			 			
 			 			echo utf8_decode($valueProductos["cantidad"]."<br>");
 			 		}
 
-			 	echo utf8_decode("</td><td style='border:1px solid #eee;'>");	
+			 	echo utf8_decode("</td><td style='border:1px solid #eee;'>");*/	
 
 		 		foreach ($productos as $key => $valueProductos) {
 			 			

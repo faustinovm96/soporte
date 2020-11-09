@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Especial"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
 
       Administrar Clientes
 
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Administrar Clientes</li>
     
@@ -38,11 +38,11 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente" style="font-size: 16px;">
           
-          Agregar Cliente
+          <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
         </button>
 
@@ -57,14 +57,14 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Documento ID</th>
-           <th>Nombre o Razón Social</th> 
-           <th>Dirección</th>
-           <th>Celular</th>
-           <th>E-mail</th>
+           <th style="text-align: center;">Documento ID</th>
+           <th style="text-align: center;">Nombre o Razón Social</th> 
+           <th style="text-align: center;">Dirección</th>
+           <th style="text-align: center;">Celular</th>
+           <th style="text-align: center;">E-mail</th>
            
 
-           <th>Acciones</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -96,7 +96,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$value["email"].'</td>
 
-                    <td>
+                    <td style="text-align: center;">
 
                       <div class="btn-group">
                           
@@ -134,7 +134,7 @@ if($_SESSION["perfil"] == "Especial"){
 MODAL AGREGAR CLIENTE
 ======================================-->
 
-<div id="modalAgregarCliente" class="modal fade" role="dialog">
+<div id="modalAgregarCliente" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -147,9 +147,9 @@ MODAL AGREGAR CLIENTE
         ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
-
+          <!--
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+        -->
           <h4 class="modal-title">Agregar cliente</h4>
 
         </div>
@@ -224,7 +224,7 @@ MODAL AGREGAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar Email" required>
 
@@ -242,7 +242,7 @@ MODAL AGREGAR CLIENTE
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Cliente</button>
 
@@ -267,7 +267,7 @@ MODAL AGREGAR CLIENTE
 MODAL EDITAR CLIENTE
 ======================================-->
 
-<div id="modalEditarCliente" class="modal fade" role="dialog">
+<div id="modalEditarCliente" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -280,9 +280,9 @@ MODAL EDITAR CLIENTE
         ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
-
+          <!--
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+          -->
           <h4 class="modal-title">Editar cliente</h4>
 
         </div>
@@ -357,7 +357,7 @@ MODAL EDITAR CLIENTE
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarEmail" id="editarEmail"  required>
 
@@ -375,7 +375,7 @@ MODAL EDITAR CLIENTE
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
 

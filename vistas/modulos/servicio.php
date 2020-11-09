@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Vendedor"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Administrar Servicios
     
@@ -26,9 +26,9 @@ if($_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
-      <li class="active">Administrar Servicio Técnico</li>
+      <li class="active">Administrar Servicios</li>
     
     </ol>
 
@@ -38,11 +38,11 @@ if($_SESSION["perfil"] == "Vendedor"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarServicio">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarServicio" style="font-size: 16px;">
           
-          Agregar Servicio
+          <i class="fa fa-plus-circle"></i> <b>Agregar</b>
 
         </button>
 
@@ -57,10 +57,10 @@ if($_SESSION["perfil"] == "Vendedor"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Descripción del Servicio</th>
-           <th>Costo</th>
+           <th style="text-align: center;">Descripción del Servicio</th>
+           <th style="text-align: center;">Costo</th>
 
-           <th>Acciones</th>
+           <th style="text-align: center;">Acciones</th>
 
          </tr> 
 
@@ -78,13 +78,13 @@ if($_SESSION["perfil"] == "Vendedor"){
        for($i = 0; $i < count($servicios); $i++){
 
           echo ' <tr>
-                  <td>'.($i+1).'</td>
+                  <td style="text-align: center;">'.($i+1).'</td>
                   <td>'.$servicios[$i]["descripcion"].'</td>
-                  <td>'.$servicios[$i]["costo"].'</td>';   
+                  <td>'.number_format($servicios[$i]["costo"]).'</td>';   
 
 
                   echo '
-                  <td>
+                  <td style="text-align: center;">
 
                     <div class="btn-group">
                         
@@ -118,7 +118,7 @@ if($_SESSION["perfil"] == "Vendedor"){
 MODAL AGREGAR equipo
 ======================================-->
 
-<div id="modalAgregarServicio" class="modal fade" role="dialog">
+<div id="modalAgregarServicio" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -132,7 +132,7 @@ MODAL AGREGAR equipo
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Agregar Servicio</h4>
 
@@ -152,7 +152,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-tasks"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaDescripcion" placeholder="Ingresar descripcion del servicio" required>
 
@@ -166,7 +166,7 @@ MODAL AGREGAR equipo
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-cart-plus"></i></span> 
 
                 <input type="number" class="form-control input-lg" name="nuevoCosto" placeholder="Ingresar costo del servicio" required>
 
@@ -209,7 +209,7 @@ MODAL AGREGAR equipo
 MODAL EDITAR SERVICIO
 ======================================-->
 
-<div id="modalEditarServicio" class="modal fade" role="dialog">
+<div id="modalEditarServicio" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -223,7 +223,7 @@ MODAL EDITAR SERVICIO
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Editar Servicio</h4>
 
@@ -243,7 +243,7 @@ MODAL EDITAR SERVICIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-tasks"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarDescripcion" name="editarDescripcion" required>
 
@@ -259,7 +259,7 @@ MODAL EDITAR SERVICIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-cart-plus"></i></span> 
 
                 <input type="number" class="form-control input-lg" id="editarCosto" name="editarCosto" required>
 
@@ -277,7 +277,7 @@ MODAL EDITAR SERVICIO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 

@@ -54,9 +54,32 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
             processData: false,
             dataType:"json",
             success:function(respuesta){
+
+              var equipo = respuesta["tipo"] + ' ' + respuesta["marca"] +  ' '  + respuesta["modelo"]
                 
                 $("#editarEquipo").val(respuesta["id"]);
-                $("#editarEquipo").html(respuesta["tipo"]);
+                $("#editarEquipo").html(equipo);
+
+            }
+
+        })
+
+        var datosTecnico = new FormData();
+        datosTecnico.append("idTecnico",respuesta["id_tecnico"]);
+
+         $.ajax({
+
+            url:"ajax/tecnicos.ajax.php",
+            method: "POST",
+            data: datosTecnico,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType:"json",
+            success:function(respuesta){
+                
+                $("#editarTecnico").val(respuesta["id"]);
+                $("#editarTecnico").html(respuesta["nombre"]);
 
             }
 

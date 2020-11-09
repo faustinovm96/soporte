@@ -13,11 +13,11 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 }
 
 ?>
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Administrar usuarios
     
@@ -25,7 +25,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Administrar usuarios</li>
     
@@ -37,11 +37,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border: 0;">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">
-          
-          Agregar usuario
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario" style="font-size: 16px;">
+          <i class="fa fa-user-plus"></i> <b>Agregar</b>
 
         </button>
 
@@ -157,7 +156,7 @@ MODAL AGREGAR USUARIO
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <!-- <button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Agregar usuario</h4>
 
@@ -177,7 +176,7 @@ MODAL AGREGAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-id-badge"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoDocumento" placeholder="Ingresar Documento" required>
 
@@ -275,7 +274,7 @@ MODAL AGREGAR USUARIO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Guardar usuario</button>
 
@@ -300,7 +299,7 @@ MODAL AGREGAR USUARIO
 MODAL EDITAR USUARIO
 ======================================-->
 
-<div id="modalEditarUsuario" class="modal fade" role="dialog">
+<div id="modalEditarUsuario" class="modal fade" data-backdrop="static" role="dialog">
   
   <div class="modal-dialog">
 
@@ -314,7 +313,7 @@ MODAL EDITAR USUARIO
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
           <h4 class="modal-title">Editar usuario</h4>
 
@@ -334,7 +333,7 @@ MODAL EDITAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-id-badge"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarDocumento" name="editarDocumento" value="" required>
 
@@ -436,7 +435,7 @@ MODAL EDITAR USUARIO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
 
           <button type="submit" class="btn btn-primary">Modificar usuario</button>
 

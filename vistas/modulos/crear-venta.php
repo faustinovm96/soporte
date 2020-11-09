@@ -14,11 +14,11 @@ if($_SESSION["perfil"] == "Especial"){
 
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: white">
 
   <section class="content-header">
     
-    <h1>
+    <h1 style="color: #3c8dbc">
       
       Agregar Movimiento
     
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <ol class="breadcrumb">
       
-      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
       
       <li class="active">Crear venta</li>
     
@@ -215,7 +215,7 @@ if($_SESSION["perfil"] == "Especial"){
                   ENTRADA IMPUESTOS Y TOTAL
                   ======================================-->
                   
-                  <div class="col-xs-8 pull-right">
+                  <div class="col-xs-12 pull-right">
                     
                     <table class="table">
 
