@@ -33,7 +33,7 @@ $totalServicios = count($servicios);
     
     <div class="icon">
       
-      <i class="ion ion-social-usd"></i>
+      <i class="ion ion-cash"></i>
     
     </div>
     

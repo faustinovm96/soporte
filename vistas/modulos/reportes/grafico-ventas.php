@@ -50,7 +50,7 @@ GRÁFICO DE VENTAS
 ======================================-->
 
 
-<div class="box box-solid bg-teal-gradient">
+<div class="box box-solid bg-blue-gradient">
 	
 	<div class="box-header">
 		
@@ -105,11 +105,11 @@ GRÁFICO DE VENTAS
     hideHover        : 'auto',
     gridTextColor    : '#fff',
     gridStrokeWidth  : 0.4,
-    pointSize        : 4,
+    pointSize        : 6,
     pointStrokeColors: ['#efefef'],
     gridLineColor    : '#efefef',
     gridTextFamily   : 'Open Sans',
-    preUnits         : '$',
+    preUnits         : 'G. ',
     gridTextSize     : 10
   });
 
