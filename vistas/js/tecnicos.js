@@ -40,7 +40,7 @@ $(".tablas").on("click", ".btnEliminarTecnico", function(){
   var idTecnico = $(this).attr("idTecnico");
   
   swal({
-        title: '¿Está seguro de borrar el cliente?',
+        title: '¿Está seguro de borrar el tecnico?',
         text: "¡Si no lo está puede cancelar la acción!",
         type: 'warning',
         showCancelButton: true,

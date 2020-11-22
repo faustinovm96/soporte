@@ -70,7 +70,7 @@ $(".tablas").on("click", ".btnEliminarEquipo", function(){
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar cliente!'
+        confirmButtonText: 'Si, borrar equipo!'
       }).then(function(result){
         if (result.value) {
           
