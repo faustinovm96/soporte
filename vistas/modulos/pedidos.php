@@ -46,6 +46,12 @@ if($_SESSION["perfil"] == "Especial"){
 
         </button>
 
+        <button class="btn btn-danger btnImprimirReportePedidos pull-right" style="font-size: 16px;">
+          
+          <i class="fa fa-plus-circle"></i> <b>Reporte de Pedidos</b>
+
+        </button>
+
       </div>
 
       <div class="box-body">

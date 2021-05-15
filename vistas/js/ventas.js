@@ -853,6 +853,18 @@ $(".daterangepicker.opensleft .ranges li").on("click", function(){
 
 })
 
+$(".btnImprimirReporteClientes").click(function(){
+  //console.log("Hola Mundo...");
+  window.open("extensiones/tcpdf/pdf/reporte_clientes.php", "_blank");
+})
 
+$(".btnImprimirReporteDeVentas").click(function(){
+  //console.log("Hola Mundo...");
+  window.open("extensiones/tcpdf/pdf/reporte_ventas.php", "_blank");
+})
 
+$(".btnImprimirReportePedidos").click(function(){
+  //console.log("Hola Mundo...");
+  window.open("extensiones/tcpdf/pdf/reporte_pedidos.php", "_blank");
+})
 

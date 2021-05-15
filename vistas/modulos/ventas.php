@@ -49,6 +49,12 @@ if($_SESSION["perfil"] == "Especial"){
 
         </a>
 
+        <button class="btn btn-danger pull-right btnImprimirReporteDeVentas" style="font-size: 16px; margin-left: 20px;">
+            
+            <i class="fa fa-plus-circle"></i> <b>Reporte de Ventas</b>
+
+          </button>
+
          <button type="button" class="btn btn-default pull-right" id="daterange-btn">
            
             <span>
