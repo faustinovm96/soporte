@@ -142,7 +142,7 @@
 				echo '</ul>
 
 			</li>';
-
+/*
 			echo '<li>
 
 				<a href="reportes">
@@ -152,7 +152,7 @@
 
 				</a>
 
-			</li>';
+			</li>';*/
 
 		}
 
